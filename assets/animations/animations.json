@@ -1,0 +1,114 @@
+{
+  "anims": [
+    {
+      "key": "darkwingDuckNesWalkingStart",
+      "frames": {
+        "typeOfGeneration": "generateFrameNumbers",
+        "key": "darkwingDuckNes",
+        "start": 6,
+        "end": 10
+      },
+      "repeat": 0,
+      "frameRate": 8
+    },
+    {
+      "key": "darkwingDuckNesWalking",
+      "frames": {
+        "typeOfGeneration": "generateFrameNumbers",
+        "key": "darkwingDuckNes",
+        "start": 7,
+        "end": 10
+      },
+      "repeat": -1,
+      "frameRate": 8
+    },
+    {
+      "key": "darkwingDuckNesDefending",
+      "frames": {
+        "typeOfGeneration": "generateFrameNumbers",
+        "key": "darkwingDuckNes",
+        "start": 1,
+        "end": 3
+      },
+      "repeat": 0,
+      "frameRate": 9
+    },
+    {
+      "key": "darkwingDuckNesShooting",
+      "frames": {
+        "typeOfGeneration": "generateFrameNumbers",
+        "key": "darkwingDuckNes",
+        "start": 12,
+        "end": 13
+      },
+      "repeat": 0,
+      "frameRate": 8
+    },
+    {
+      "key": "darkwingDuckNesDown",
+      "frames": {
+        "typeOfGeneration": "generateFrameNumbers",
+        "key": "darkwingDuckNes",
+        "start": 14,
+        "end": 15
+      },
+      "repeat": 0,
+      "frameRate": 8
+    },
+    {
+      "key": "darkwingDuckNesMakeEyes",
+      "frames": {
+        "typeOfGeneration": "generateFrameNumbers",
+        "key": "darkwingDuckNes",
+        "start": 18,
+        "end": 19
+      },
+      "repeat": -1,
+      "frameRate": 6
+    },
+    {
+      "key": "darkwingDuckNesJumpDefendingStart",
+      "frames": {
+        "typeOfGeneration": "generateFrameNumbers",
+        "key": "darkwingDuckNes",
+        "start": 26,
+        "end": 28
+      },
+      "repeat": 0,
+      "frameRate": 9
+    },
+    {
+      "key": "darkwingDuckNesJumpDefending",
+      "frames": {
+        "typeOfGeneration": "generateFrameNumbers",
+        "key": "darkwingDuckNes",
+        "start": 27,
+        "end": 28
+      },
+      "repeat": -1,
+      "frameRate": 6
+    },
+    {
+      "key": "darkwingDuckNesHookedShooting",
+      "frames": {
+        "typeOfGeneration": "generateFrameNumbers",
+        "key": "darkwingDuckNes",
+        "start": 33,
+        "end": 34
+      },
+      "repeat": 0,
+      "frameRate": 6
+    },
+    {
+      "key": "darkwingDuckNesIAm",
+      "frames": {
+        "typeOfGeneration": "generateFrameNumbers",
+        "key": "darkwingDuckNes",
+        "start": 36,
+        "end": 41
+      },
+      "repeat": 0,
+      "frameRate": 12
+    }
+  ]
+}
