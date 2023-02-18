@@ -53,6 +53,21 @@
         "type": "image",
         "key": "background",
         "url": "./assets/images/background.png"
+      },
+      {
+        "type": "audio",
+        "key": "musicTheme",
+        "url": "./assets/sounds/music/theme.mp3"
+      },
+      {
+        "type": "audio",
+        "key": "sfxJump",
+        "url": "./assets/sounds/sfx/darkwing-duck-sfx-1.mp3"
+      },
+      {
+        "type": "audio",
+        "key": "sfxDie",
+        "url": "./assets/sounds/sfx/darkwing-duck-sfx-42.wav"
       }
     ]
   }

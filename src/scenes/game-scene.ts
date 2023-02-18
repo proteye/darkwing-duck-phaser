@@ -1,5 +1,5 @@
 import { Brick } from '../objects/brick'
-import { DarkwingDuckNes } from '../objects/darkwingDuckNes'
+import { DarkwingDuckNes } from '../objects/darkwing-duck-nes'
 
 export class GameScene extends Phaser.Scene {
   // tilemap
@@ -26,15 +26,11 @@ export class GameScene extends Phaser.Scene {
     // *****************************************************************
     // add background
     this.add.tileSprite(315, 84, 630, 168, 'background')
-    // const backgroundImage = this.add.image(0, 0, 'background').setOrigin(0, 0)
-    // backgroundImage.setScale(10, 1)
 
     // create our tilemap from Tiled JSON
     this.map = this.make.tilemap({ key: this.registry.get('level') })
     // add our tileset and layers to our tilemap
     this.tileset = this.map.addTilesetImage('tilemap_packed')
-
-    // this.backgroundLayer = this.map.createLayer('backgroundLayer', this.tileset, 0, 0)
 
     this.foregroundLayer = this.map.createLayer('foregroundLayer', this.tileset, 0, 0)
     this.foregroundLayer.setName('foregroundLayer')

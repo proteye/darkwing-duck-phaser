@@ -51,6 +51,11 @@ export class BootScene extends Phaser.Scene {
     this.load.pack('preload', './assets/pack.json', 'preload')
   }
 
+  create(): void {
+    // add music
+    this.sound.add('musicTheme', { loop: true }).play()
+  }
+
   update(): void {
     this.scene.start('MenuScene')
   }

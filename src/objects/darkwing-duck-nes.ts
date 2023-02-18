@@ -1,19 +1,5 @@
 import { ISpriteConstructor } from '../interfaces/sprite.interface'
-
-const FRAMES = {
-  standing: 0,
-  sitting: 15,
-  turning: 6,
-  shooting: 13,
-  shootingDown: 16,
-  dying: 20,
-  jumpingUp: 24,
-  jumpingDown: 25,
-  shootingJumpUp: 30,
-  shootingJumpDown: 31,
-  hooking: 32,
-  shootingHook: 34,
-}
+import { FRAMES } from '../frames/darkwing-duck-frames'
 
 export class DarkwingDuckNes extends Phaser.GameObjects.Sprite {
   body: Phaser.Physics.Arcade.Body
@@ -37,6 +23,9 @@ export class DarkwingDuckNes extends Phaser.GameObjects.Sprite {
 
   // input
   private keys: Map<string, Phaser.Input.Keyboard.Key>
+
+  // sounds
+  private sfx: Map<string, Phaser.Sound.BaseSound>
 
   public getKeys(): Map<string, Phaser.Input.Keyboard.Key> {
     return this.keys
@@ -87,6 +76,12 @@ export class DarkwingDuckNes extends Phaser.GameObjects.Sprite {
       ['DOWN', this.addKey('DOWN')],
       ['JUMP', this.addKey('X')],
       ['SHOOT', this.addKey('Z')],
+    ])
+
+    // add sounds
+    this.sfx = new Map([
+      ['jump', this.scene.sound.add('sfxJump', { loop: false })],
+      ['die', this.scene.sound.add('sfxDie', { loop: false })],
     ])
 
     // physics
@@ -186,6 +181,7 @@ export class DarkwingDuckNes extends Phaser.GameObjects.Sprite {
 
     // handle jumping
     if (this.keys.get('JUMP').isDown && !this.isJumping) {
+      this.sfx.get('jump').play()
       this.body.setVelocityY(-180)
       this.isJumping = true
       this.isDefendingPlay = false
@@ -262,16 +258,6 @@ export class DarkwingDuckNes extends Phaser.GameObjects.Sprite {
     this.body.setOffset(0, 14)
   }
 
-  public bounceUpAfterHitEnemyOnHead(): void {
-    this.currentScene.add.tween({
-      targets: this,
-      props: { y: this.y - 5 },
-      duration: 200,
-      ease: 'Power1',
-      yoyo: true,
-    })
-  }
-
   public gotHit(): void {
     this.isVulnerable = false
     // darkwing-duck is dying
@@ -282,14 +268,18 @@ export class DarkwingDuckNes extends Phaser.GameObjects.Sprite {
     this.body.stop()
     this.anims.stop()
 
+    // play sound
+    this.sfx.get('die').play()
+
     // make last dead jump and turn off collision check
     this.body.setVelocityY(-180)
 
-    // this.body.checkCollision.none did not work for me
-    this.body.checkCollision.up = false
-    this.body.checkCollision.down = false
-    this.body.checkCollision.left = false
-    this.body.checkCollision.right = false
+    this.body.checkCollision.none = true
+    // when this.body.checkCollision.none did not work for you
+    // this.body.checkCollision.up = false
+    // this.body.checkCollision.down = false
+    // this.body.checkCollision.left = false
+    // this.body.checkCollision.right = false
   }
 
   private stand() {
