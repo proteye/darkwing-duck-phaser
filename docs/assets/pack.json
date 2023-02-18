@@ -1,0 +1,74 @@
+{
+  "preload": {
+    "files": [
+      {
+        "type": "bitmapFont",
+        "key": "font",
+        "textureURL": "./assets/font/defaultFont.png",
+        "fontDataURL": "./assets/font/defaultFont.fnt"
+      },
+      {
+        "type": "tilemapTiledJSON",
+        "key": "level_1",
+        "url": "./assets/maps/level_1.json"
+      },
+      {
+        "type": "image",
+        "key": "tilemap_packed",
+        "url": "./assets/tiles/tilemap_packed.png"
+      },
+      {
+        "type": "json",
+        "key": "animationJSON",
+        "url": "./assets/animations/animations.json"
+      },
+      {
+        "type": "spritesheet",
+        "key": "tilemapPackedSprites",
+        "url": "./assets/tiles/tilemap_packed.png",
+        "frameConfig": {
+          "frameWidth": 21,
+          "frameHeight": 11
+        }
+      },
+      {
+        "type": "spritesheet",
+        "key": "darkwingDuckNes",
+        "url": "./assets/sprites/darkwingDuckNes.png",
+        "frameConfig": {
+          "frameWidth": 32,
+          "frameHeight": 40
+        }
+      },
+      {
+        "type": "spritesheet",
+        "key": "darkwingDuckNes2x",
+        "url": "./assets/sprites/darkwingDuckNes2x.png",
+        "frameConfig": {
+          "frameWidth": 64,
+          "frameHeight": 80
+        }
+      },
+      {
+        "type": "image",
+        "key": "background",
+        "url": "./assets/images/background.png"
+      },
+      {
+        "type": "audio",
+        "key": "musicTheme",
+        "url": "./assets/sounds/music/theme.mp3"
+      },
+      {
+        "type": "audio",
+        "key": "sfxJump",
+        "url": "./assets/sounds/sfx/darkwing-duck-sfx-1.mp3"
+      },
+      {
+        "type": "audio",
+        "key": "sfxDie",
+        "url": "./assets/sounds/sfx/darkwing-duck-sfx-42.wav"
+      }
+    ]
+  }
+}
