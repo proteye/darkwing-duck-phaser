@@ -4,8 +4,8 @@
       {
         "type": "bitmapFont",
         "key": "font",
-        "textureURL": "./assets/font/defaultFont.png",
-        "fontDataURL": "./assets/font/defaultFont.fnt"
+        "textureURL": "./assets/fonts/defaultFont.png",
+        "fontDataURL": "./assets/fonts/defaultFont.fnt"
       },
       {
         "type": "tilemapTiledJSON",
@@ -53,6 +53,41 @@
         "type": "image",
         "key": "background",
         "url": "./assets/images/background.png"
+      },
+      {
+        "type": "image",
+        "key": "ОльгаШуравина",
+        "url": "https://static.tildacdn.com/tild3630-6632-4838-b034-623532373133/avatar440712302.png"
+      },
+      {
+        "type": "image",
+        "key": "АлинаСиничкина",
+        "url": "https://static.tildacdn.com/tild3335-6536-4234-b239-616365386261/a1a0b842-bcf1-4cd9-9.png"
+      },
+      {
+        "type": "image",
+        "key": "ИринаШрамчук",
+        "url": "https://static.tildacdn.com/tild3439-3263-4536-b637-633434616238/14aac200-fab0-4fc5-b.png"
+      },
+      {
+        "type": "image",
+        "key": "ТатьянаТурбал",
+        "url": "https://static.tildacdn.com/tild6638-6361-4638-b436-303061306535/9c65088f-96b9-4e4a-b.png"
+      },
+      {
+        "type": "image",
+        "key": "ЕленаНуриджанова",
+        "url": "https://static.tildacdn.com/tild3866-3334-4536-a263-323137373665/8c70abc8-fd3a-405a-8.png"
+      },
+      {
+        "type": "image",
+        "key": "АнастасияМаматова",
+        "url": "https://static.tildacdn.com/tild6538-3761-4838-a132-326630333030/abd0d0ae-2e80-4368-a.png"
+      },
+      {
+        "type": "image",
+        "key": "СветланаНаумова",
+        "url": "https://static.tildacdn.com/tild3736-3834-4731-b333-643437373739/aba1251d-2ba5-4f7f-b.png"
       },
       {
         "type": "audio",

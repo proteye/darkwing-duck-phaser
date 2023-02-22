@@ -43,6 +43,13 @@ export class GameScene extends Phaser.Scene {
     this.spikesLayer.setCollisionByProperty({ collides: true })
 
     // *****************************************************************
+    // TEXT
+    // *****************************************************************
+    const text = this.add.text(10, 30, 'Поздравляем с 8 марта!', { fontFamily: 'coralWaves' })
+    text.setFontSize(40)
+    text.setColor('#ff0000')
+
+    // *****************************************************************
     // GAME OBJECTS
     // *****************************************************************
     this.bricks = this.add.group({
