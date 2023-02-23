@@ -101,6 +101,11 @@
       },
       {
         "type": "audio",
+        "key": "sfxCoin",
+        "url": "./assets/sounds/sfx/darkwing-duck-sfx-36.wav"
+      },
+      {
+        "type": "audio",
         "key": "sfxDie",
         "url": "./assets/sounds/sfx/darkwing-duck-sfx-42.wav"
       }
