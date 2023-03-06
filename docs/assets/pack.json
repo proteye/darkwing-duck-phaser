@@ -1,0 +1,114 @@
+{
+  "preload": {
+    "files": [
+      {
+        "type": "bitmapFont",
+        "key": "font",
+        "textureURL": "./assets/fonts/defaultFont.png",
+        "fontDataURL": "./assets/fonts/defaultFont.fnt"
+      },
+      {
+        "type": "tilemapTiledJSON",
+        "key": "level_1",
+        "url": "./assets/maps/level_1.json"
+      },
+      {
+        "type": "image",
+        "key": "tilemap_packed",
+        "url": "./assets/tiles/tilemap_packed.png"
+      },
+      {
+        "type": "json",
+        "key": "animationJSON",
+        "url": "./assets/animations/animations.json"
+      },
+      {
+        "type": "spritesheet",
+        "key": "tilemapPackedSprites",
+        "url": "./assets/tiles/tilemap_packed.png",
+        "frameConfig": {
+          "frameWidth": 21,
+          "frameHeight": 11
+        }
+      },
+      {
+        "type": "spritesheet",
+        "key": "darkwingDuckNes",
+        "url": "./assets/sprites/darkwingDuckNes.png",
+        "frameConfig": {
+          "frameWidth": 32,
+          "frameHeight": 40
+        }
+      },
+      {
+        "type": "spritesheet",
+        "key": "darkwingDuckNes2x",
+        "url": "./assets/sprites/darkwingDuckNes2x.png",
+        "frameConfig": {
+          "frameWidth": 64,
+          "frameHeight": 80
+        }
+      },
+      {
+        "type": "image",
+        "key": "background",
+        "url": "./assets/images/background.png"
+      },
+      {
+        "type": "image",
+        "key": "ОльгаШуравина",
+        "url": "https://static.tildacdn.com/tild3630-6632-4838-b034-623532373133/avatar440712302.png"
+      },
+      {
+        "type": "image",
+        "key": "АлинаСиничкина",
+        "url": "https://static.tildacdn.com/tild3335-6536-4234-b239-616365386261/a1a0b842-bcf1-4cd9-9.png"
+      },
+      {
+        "type": "image",
+        "key": "ИринаШрамчук",
+        "url": "https://static.tildacdn.com/tild3439-3263-4536-b637-633434616238/14aac200-fab0-4fc5-b.png"
+      },
+      {
+        "type": "image",
+        "key": "ТатьянаТурбал",
+        "url": "https://static.tildacdn.com/tild6638-6361-4638-b436-303061306535/9c65088f-96b9-4e4a-b.png"
+      },
+      {
+        "type": "image",
+        "key": "ЕленаНуриджанова",
+        "url": "https://static.tildacdn.com/tild3866-3334-4536-a263-323137373665/8c70abc8-fd3a-405a-8.png"
+      },
+      {
+        "type": "image",
+        "key": "АнастасияМаматова",
+        "url": "https://static.tildacdn.com/tild6538-3761-4838-a132-326630333030/abd0d0ae-2e80-4368-a.png"
+      },
+      {
+        "type": "image",
+        "key": "СветланаНаумова",
+        "url": "https://static.tildacdn.com/tild3736-3834-4731-b333-643437373739/aba1251d-2ba5-4f7f-b.png"
+      },
+      {
+        "type": "audio",
+        "key": "musicTheme",
+        "url": "./assets/sounds/music/theme.mp3"
+      },
+      {
+        "type": "audio",
+        "key": "sfxJump",
+        "url": "./assets/sounds/sfx/darkwing-duck-sfx-1.mp3"
+      },
+      {
+        "type": "audio",
+        "key": "sfxCoin",
+        "url": "./assets/sounds/sfx/darkwing-duck-sfx-36.wav"
+      },
+      {
+        "type": "audio",
+        "key": "sfxDie",
+        "url": "./assets/sounds/sfx/darkwing-duck-sfx-42.wav"
+      }
+    ]
+  }
+}
