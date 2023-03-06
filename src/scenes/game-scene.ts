@@ -1,6 +1,16 @@
 import { Brick } from '../objects/brick'
 import { DarkwingDuckNes } from '../objects/darkwing-duck-nes'
 
+const girlNames = [
+  'Анастасия\nМаматова',
+  'Ольга\nШуравина',
+  'Алина\nСиничкина',
+  'Ирина\nШрамчук',
+  'Татьяна\nТурбал',
+  'Елена\nНуриджанова',
+  'Светлана\nНаумова',
+]
+
 export class GameScene extends Phaser.Scene {
   // tilemap
   private map: Phaser.Tilemaps.Tilemap
@@ -10,7 +20,12 @@ export class GameScene extends Phaser.Scene {
 
   // game objects
   private bricks: Phaser.GameObjects.Group
+  private names: Phaser.GameObjects.Text[]
+  private namesCollisions: Phaser.GameObjects.Group
   private player: DarkwingDuckNes
+
+  // sounds
+  private sfxCoin: Phaser.Sound.BaseSound
 
   constructor() {
     super({
@@ -43,10 +58,25 @@ export class GameScene extends Phaser.Scene {
     this.spikesLayer.setCollisionByProperty({ collides: true })
 
     // *****************************************************************
+    // TEXT
+    // *****************************************************************
+    const text = this.add.text(10, 35, 'Поздравляем с 8 марта!', { fontFamily: 'coralWaves' })
+    text.setFontSize(40)
+    text.setColor('#f80000')
+
+    // *****************************************************************
     // GAME OBJECTS
     // *****************************************************************
     this.bricks = this.add.group({
       /* classType: Brick */
+      runChildUpdate: true,
+    })
+    this.names = []
+    // this.names = this.add.group({
+    //   runChildUpdate: true,
+    // })
+
+    this.namesCollisions = this.add.group({
       runChildUpdate: true,
     })
 
@@ -57,14 +87,19 @@ export class GameScene extends Phaser.Scene {
     // *****************************************************************
     this.physics.add.collider(this.player, this.foregroundLayer)
     this.physics.add.collider(this.player, this.bricks)
+    // this.physics.add.collider(this.player, this.namesCollisions)
 
     this.physics.add.overlap(this.player, this.spikesLayer, this.handlePlayerSpikesOverlap, null, this)
+    this.physics.add.overlap(this.player, this.namesCollisions, this.handlePlayerTextOverlap, null, this)
 
     // *****************************************************************
     // CAMERA
     // *****************************************************************
     this.cameras.main.startFollow(this.player)
     this.cameras.main.setBounds(0, 0, this.map.widthInPixels, this.map.heightInPixels)
+
+    // Sounds
+    this.sfxCoin = this.sound.add('sfxCoin', { loop: false })
   }
 
   update(): void {
@@ -97,6 +132,27 @@ export class GameScene extends Phaser.Scene {
         )
       }
     })
+
+    // girl names
+    let nameX = 40
+    const nameY = 20
+    girlNames.forEach((name, index) => {
+      if (index === 4) {
+        nameX += 50
+      }
+      const text = this.add.text(nameX, nameY, name, { fontFamily: 'coralWaves' })
+      text.setName(name)
+      text.setOrigin(0.5, 0.5)
+      text.setFontSize(18)
+      text.setColor('#FF548E')
+      this.names.push(text)
+      nameX += 85
+
+      let collision = this.add.rectangle(text.x, text.y, text.width, text.height)
+      this.physics.add.existing(collision, true)
+      collision.setName(name)
+      this.namesCollisions.add(collision)
+    })
   }
 
   /**
@@ -109,5 +165,12 @@ export class GameScene extends Phaser.Scene {
     if (_spike.canCollide && _player.getVulnerable()) {
       _player.gotHit()
     }
+  }
+
+  private handlePlayerTextOverlap(_player: DarkwingDuckNes, _text: any): void {
+    const name = this.names.find((item) => item.name === _text.name)
+    this.physics.world.enable(name)
+    this.sfxCoin.play()
+    _text.destroy()
   }
 }

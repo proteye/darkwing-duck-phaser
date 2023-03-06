@@ -12,7 +12,7 @@ export const GameConfig: Phaser.Types.Core.GameConfig = {
   zoom: 5,
   type: Phaser.AUTO,
   parent: 'game',
-  scene: [BootScene, MenuScene, HUDScene, GameScene],
+  scene: [BootScene, MenuScene, GameScene],
   input: {
     keyboard: true,
   },
